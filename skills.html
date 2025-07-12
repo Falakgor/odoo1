@@ -1,0 +1,93 @@
+
+<html>
+<head>
+  <title>SkillSwap Circle - Browse Skills</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <img src="image/logo.webp" alt="Logo" class="logo" />
+      <nav>
+        <a href="home.html" class="nav-button">Home</a>
+        <a href="profile.html" class="nav-button">Profile</a>
+        <a href="about.html" class="nav-button">About</a>
+        <a href="skills.html" class="nav-button">Skills</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Skill Card Grid -->
+    <section class="skill-grid">
+      <h2>Explore Skills</h2>
+      <div class="card-container">
+        <div class="skill-card">🎨 Painting</div>
+        <div class="skill-card">💻 Coding</div>
+        <div class="skill-card">🧘 Yoga</div>
+        <div class="skill-card">📸 Photography</div>
+        <div class="skill-card">🍳 Cooking</div>
+        <div class="skill-card">🎸 Guitar</div>
+      </div>
+    </section>
+
+    <!-- Visual Swap Form -->
+    <section class="swap-form">
+      <h2>Request a Skill Swap</h2>
+      <form>
+        <label>Choose a Skill You Offer:</label><br />
+        <select>
+          <option>Painting</option>
+          <option>Coding</option>
+          <option>Yoga</option>
+        </select><br /><br />
+
+        <label>Choose a Skill You Want to Learn:</label><br />
+        <select>
+          <option>Photography</option>
+          <option>Guitar</option>
+          <option>Cooking</option>
+        </select><br /><br />
+
+        <label>Message to Partner:</label><br />
+        <textarea rows="4" cols="50" placeholder="Say hi and describe your request..."></textarea><br /><br />
+
+        <button type="submit">Send Request</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SkillSwap Circle. All rights reserved.</p>
+  </footer>
+  <!-- Popup on Form Submit -->
+
+
+<script>
+  const cards = document.querySelectorAll(".skill-card");
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      cards.forEach(c => c.classList.remove("selected"));
+      card.classList.add("selected");
+    });
+  });
+</script>
+<script>
+  const form = document.querySelector("form");
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    // Create confirmation message
+    const msg = document.createElement("div");
+    msg.textContent = "✅ Your swap request has been sent!";
+    msg.style.padding = "15px";
+    msg.style.marginTop = "20px";
+    msg.style.backgroundColor = "#d4edda";
+    msg.style.color = "#155724";
+    msg.style.borderRadius = "6px";
+    msg.style.textAlign = "center";
+    form.after(msg);
+  });
+</script>
+</body>
+</html>
