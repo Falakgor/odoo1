@@ -22,17 +22,17 @@
       <h2>Build Your SkillSwap Profile</h2>
       <form>
         <label>Name:</label><br />
-        <input type="text" placeholder="Your name" /><br /><br />
+        <input type="text" id="name-input" placeholder="Your name" /><br /><br />
 
         <label>Skills You Offer:</label><br />
-        <input type="text" placeholder="E.g. Painting, Coding" /><br /><br />
+        <input type="text" id="skills you offer" placeholder="E.g. Painting, Coding" /><br /><br />
 
         <label>Skills You Want to Learn:</label><br />
-        <input type="text" placeholder="E.g. Guitar, French" /><br /><br />
+        <input type="text" id="skills you want to learn" placeholder="E.g. Guitar, French" /><br /><br />
 
         <label>Availability:</label><br />
         <select>
-          <option>Weekdays</option>
+          <option>Working days</option>
           <option>Weekends</option>
           <option>Evenings</option>
         </select><br /><br />
@@ -42,12 +42,13 @@
       <!-- Profile Preview Section -->
       <div class="profile-preview">
         <h3>Your Profile Preview</h3>
-        <p><strong>Name:</strong> Falak</p>
-        <p><strong>Skills Offered:</strong> Cooking</p>
-        <p><strong>Skills Wanted:</strong> Photography</p>
-        <p><strong>Availability:</strong> Weekends</p>
+        <p><strong>Name:</strong> <span id="name-preview">Your Name</span></p>
+        <p><strong>Skills Offered:</strong> <span id="skills-offer-preview">Skills Offered</span></p>
+        <p><strong>Skills Wanted:</strong> <span id="skills-want-preview">Skills Wanted</span></p>
+        <p><strong>Availability:</strong> <span id="availability-preview">Availability</span></p>
         <img src="user.png" alt="Your Photo" class="user-photo" />
       </div>
+
 
     </section>
   </main>
@@ -55,5 +56,33 @@
   <footer>
     <p>&copy; 2025 SkillSwap Circle. All rights reserved.</p>
   </footer>
+   <script>
+    const nameInput = document.getElementById("name-input");
+    const skillsOfferInput = document.getElementById("skills-offer-input");
+    const skillsWantInput = document.getElementById("skills-want-input");
+    const availabilityInput = document.getElementById("availability-input");
+
+    const namePreview = document.getElementById("name-preview");
+    const offerPreview = document.getElementById("skills-offer-preview");
+    const wantPreview = document.getElementById("skills-want-preview");
+    const availabilityPreview = document.getElementById("availability-preview");
+
+    nameInput.addEventListener("input", () => {
+      namePreview.textContent = nameInput.value || "Your Name";
+    });
+
+    skillsOfferInput.addEventListener("input", () => {
+      offerPreview.textContent = skillsOfferInput.value || "Skills Offered";
+    });
+
+    skillsWantInput.addEventListener("input", () => {
+      wantPreview.textContent = skillsWantInput.value || "Skills Wanted";
+    });
+
+    availabilityInput.addEventListener("change", () => {
+      availabilityPreview.textContent = availabilityInput.value;
+    });
+  </script>
+
 </body>
 </html>
