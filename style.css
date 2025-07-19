@@ -16,7 +16,6 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   height: 88px;
-
 }
 
 .logo {
@@ -96,6 +95,7 @@ footer {
   font-weight: bold;
   cursor: pointer;
 }
+
 .profile-preview {
   background-color: #ffffff;
   max-width: 500px;
@@ -124,6 +124,7 @@ footer {
   object-fit: cover;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
 /* ✨ Highlight selected skill card */
 .skill-card.selected {
   background-color: #4a90e2;
@@ -132,6 +133,7 @@ footer {
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
 }
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -164,6 +166,7 @@ footer {
     font-size: 14px;
   }
 }
+
 .about-section {
   max-width: 600px;
   margin: 60px auto;
